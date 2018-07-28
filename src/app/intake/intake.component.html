@@ -1,0 +1,33 @@
+<div class="row">
+    <form>
+    <div class="form-group">
+        <label> Enter you raw json input here</label> <br>
+        <textarea class="form-control" rows="3" #intakeJson></textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class='btn btn-primary' (click)="saveIntake(intakeJson.value)">
+            Submit  <i class="far fa-paper-plane"></i>
+        </button>
+    </div>
+    <div class="form-group">
+        <h3 *ngIf='successMsg !== ""' class="label label-success">
+            <i class="far fa-check-circle"></i> Valid JSON
+        </h3>
+        <h3 *ngIf='warningMsg !== ""' class="label label-danger">
+            <i class="fas fa-exclamation"></i> Invalid JSON
+        </h3>
+    </div>
+    </form>
+</div>
+<div class="row" *ngIf="results.scoredApplicants.length > 0">
+    <h3>Compatability Scores</h3>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let applicant of results.scoredApplicants ">
+            {{applicant.name}} : {{applicant.score}}
+        </li>
+    </ul>
+    <div class="card">
+        <h3>Raw JSON Response</h3>
+        <pre>{{ results | json }}</pre>
+    </div>
+</div>
