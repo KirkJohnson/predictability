@@ -62,7 +62,8 @@ paste in a json object like:
 	}]
 }
 ```
-and if json is valid results and raw JSON out put will be displayed
+into the textarea that is indicated, press submit, and if json is valid results and raw JSON out put will be displayed.  If your json is  not valid a red label will show up indicating so.  Go to a site like https://jsonlint.com/ to get more detailed information of what is wrong with your json if this is the case.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
